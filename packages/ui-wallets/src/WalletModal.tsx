@@ -345,7 +345,7 @@ function DesktopModal<T>({
         flex={1}
         mx="24px"
         display={{
-          xs: 'none',
+          xs: 'flex',
           sm: 'flex',
         }}
         justifyContent="center"
