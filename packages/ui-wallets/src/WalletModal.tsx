@@ -465,7 +465,7 @@ const NotInstalled = ({ wallet, qrCode }: { wallet: WalletConfigV2; qrCode?: str
       )}
       {!qrCode && (
         <Text maxWidth="246px" m="auto">
-          {t('Please install the %wallet% browser extension to connect the %wallet% wallet.', {
+          {t('Please input the detail of the %wallet% wallet to connect.', {
             wallet: wallet.title,
           })}
         </Text>
@@ -477,7 +477,7 @@ const NotInstalled = ({ wallet, qrCode }: { wallet: WalletConfigV2; qrCode?: str
       )}
       {wallet.downloadLink && (
         <Button variant="subtle" as="a" href={getDesktopLink(wallet.downloadLink)} external>
-          {getDesktopText(wallet.downloadLink, t('Install'))}
+          {getDesktopText(wallet.downloadLink, t('Connect'))}
         </Button>
       )}
     </>

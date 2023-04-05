@@ -1,6 +1,8 @@
 import type { Ethereum } from '@wagmi/core'
 
 export interface ExtendEthereum extends Ethereum {
+    isWalletConnect?: true;
+    isCoinbase?: true;
   isSafePal?: true
   isCoin98?: true
   isBlocto?: true
