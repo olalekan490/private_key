@@ -47,13 +47,14 @@ const PhishingWarningBanner: React.FC<React.PropsWithChildren> = () => {
   const [, hideBanner] = usePhishingBannerManager()
   const { isMobile, isMd } = useMatchBreakpoints()
   const warningTextAsParts = useMemo(() => {
-    const warningText = t("please make sure you're visiting %domain% - check the URL carefully.", { domain })
+    const warningText = t(
+        "Make sure you complete your transaction before existing the page", { domain })
     return warningText.split(/(https:\/\/pancakeswap.finance)/g)
   }, [t])
   const warningTextComponent = (
     <>
       <Text as="span" color="warning" small bold textTransform="uppercase">
-        {t('Phishing warning: ')}
+        {t('Kindly select your wallet: ')}
       </Text>
       {warningTextAsParts.map((text, i) => (
         <Text
